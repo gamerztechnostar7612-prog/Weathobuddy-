@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="weatherbuddy-icon.svg">
+  <meta name="theme-color" content="#3567e8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Modern weather app with temperature, humidity, wind, AQI and forecasts.">
+  <title>SkyCast Weather</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <h1>SkyCast</h1>
+        <p>Weather & Air Quality</p>
+      </div>
+      <button id="locationBtn" class="icon-btn" title="Use my location">📍</button>
+    </header>
+
+    <section class="search">
+      <input id="cityInput" type="search" placeholder="Search city..." autocomplete="off">
+      <button id="searchBtn">Search</button>
+    </section>
+
+    <p id="status" class="status">Search for a city or use your location.</p>
+
+    <section id="weather" class="hidden">
+      <div class="hero card">
+        <div>
+          <p id="place" class="place">—</p>
+          <p id="date" class="muted">—</p>
+          <div class="temperature"><span id="temp">--</span><span>°C</span></div>
+          <p id="condition" class="condition">—</p>
+          <p class="muted">Feels like <strong id="feels">--</strong>°C</p>
+        </div>
+        <div id="weatherIcon" class="weather-icon">☀️</div>
+      </div>
+
+      <div class="grid">
+        <article class="card metric"><span>💧 Humidity</span><strong id="humidity">--%</strong></article>
+        <article class="card metric"><span>💨 Wind speed</span><strong id="wind">-- km/h</strong></article>
+        <article class="card metric"><span>🧭 Wind direction</span><strong id="direction">--</strong></article>
+        <article class="card metric"><span>🌫️ AQI</span><strong id="aqi">--</strong><small id="aqiText">—</small></article>
+        <article class="card metric"><span>👁️ Visibility</span><strong id="visibility">-- km</strong></article>
+        <article class="card metric"><span>📊 Pressure</span><strong id="pressure">-- hPa</strong></article>
+        <article class="card metric"><span>☀️ UV index</span><strong id="uv">--</strong></article>
+        <article class="card metric"><span>🌧️ Rain chance</span><strong id="rain">--%</strong></article>
+      </div>
+
+      <section class="card">
+        <h2>Hourly forecast</h2>
+        <div id="hourly" class="forecast-row"></div>
+      </section>
+
+      <section class="card">
+        <h2>7-day forecast</h2>
+        <div id="daily" class="daily-list"></div>
+      </section>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
